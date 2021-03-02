@@ -14,6 +14,17 @@ ReactJS, com NextJs e Typescript
 
 Utilização do NextJs e do Typescript em aplicações, além dos conceitos de ContextApi e Hooks no React 
 
+# :stars: Instalação 
+
+``` git clone https://github.com/stevapsys/moveit-next.git ``` 
+
+``` yarn install ``` 
+
+``` yarn add typescript @types/react @types/react-dom  @types/node ``` 
+
+``` yarn dev ``` 
+
+
 # :dizzy: Deploy 
 
 A aplicação foi publicada no Vercel e está disponível no link: https://moveit-next-stevapsys.vercel.app/
