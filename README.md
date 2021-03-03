@@ -4,7 +4,9 @@ Aplicação desenvolvida durante a #nlw4, da  <a href="https://rocketseat.com.br
 
 #  :bulb: Objetivo 
 
-Criar uma aplicação que funciona como metódo pomodoro, uma técnica que consiste em dividir os afazeres em intevalos de 25 minutos. Durante 25 minutos, um cronômetro é ativado e durante esse período, o ideal é que você foque totalmente no que está fazendo. Quando terminar o tempo, ele vai finalizar a contagem e gerar um desafio para trabalhar o corpo ou a visão. Conforme for completando os desafios, o seu nível aumentará. 
+Criar uma aplicação que funciona como metódo pomodoro, uma técnica que consiste em dividir os afazeres em intevalos de 25 minutos.
+Durante 25 minutos, um cronômetro é ativado e nesse período, o ideal é que você foque totalmente no que está fazendo. Quando terminar o tempo, a aplicação te avisa por notificação e aviso sonoro e um desafio para trabalhar o corpo ou a visão é ativado. Conforme for completando os desafios, o seu nível aumentará.
+
 
 #  :computer: Tecnogias utilizadas
 
