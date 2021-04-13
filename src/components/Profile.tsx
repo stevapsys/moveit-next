@@ -9,11 +9,11 @@ export function Profile() {
     const { level } = useContext(ChallengesContext); 
 
     const userName = typeof window !== 'undefined' ? localStorage.getItem('username') : null
-    const gitHub = typeof window !== 'undefined' ? localStorage.getItem('gitHub') : null
+    const gitHub = typeof window !== 'undefined' ? localStorage.getItem('github') : null
 
     const gitHubImage = gitHub + '.png';
 
-    if (gitHub !== null) {
+    if (gitHub !== "") {
 
     return (
         <div className={style.profileContainer}>
