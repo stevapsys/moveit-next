@@ -33,4 +33,4 @@ A aplicação foi publicada no Vercel e está disponível no link: https://movei
 
 # :up: Próximo Nível 
 
-Em breve... 
+Feature 13/04/21: Adição dos campos de nome e imagem 
