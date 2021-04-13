@@ -18,7 +18,7 @@ const {closeLoginModal, level , closeLevelUpModal} = useContext(ChallengesContex
         closeLoginModal(); 
       }
 
-      const userLogged = localStorage.getItem('username');
+      const userLogged = typeof window !== 'undefined' ? localStorage.getItem('username') : null
 
       if (userLogged !== null) {
         return (

@@ -8,8 +8,9 @@ import style from '../style/components/Profile.module.css';
 export function Profile() {
     const { level } = useContext(ChallengesContext); 
 
-    const userName = localStorage.username;
-    const gitHub = localStorage.getItem('github');
+    const userName = typeof window !== 'undefined' ? localStorage.getItem('username') : null
+    const gitHub = typeof window !== 'undefined' ? localStorage.getItem('gitHub') : null
+
     const gitHubImage = gitHub + '.png';
 
     if (gitHub !== null) {
