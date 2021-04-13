@@ -8,11 +8,17 @@ import style from '../style/components/Profile.module.css';
 export function Profile() {
     const { level } = useContext(ChallengesContext); 
 
+    const userName = localStorage.username;
+    const gitHub = localStorage.getItem('github');
+    const gitHubImage = gitHub + '.png';
+
+    if (gitHub !== null) {
+
     return (
         <div className={style.profileContainer}>
-            <img src="https://github.com/stevapsys.png" alt="Stephanie Vapsys"/>
+            <img src={gitHubImage} alt={gitHub}/>
             <div>
-                <strong>Stephanie Vapsys</strong>
+                <strong>{userName}</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                     Level { level }
@@ -20,4 +26,22 @@ export function Profile() {
             </div>
         </div>
     )
+    } else {
+        return (
+            <div className={style.profileContainer}>
+              <img src="icons/gatinho.png" alt="gatinho"/>
+                <div>
+                    <strong>{userName}</strong>
+                    <p>
+                        <img src="icons/level.svg" alt="Level"/>
+                        Level { level }
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+  
+
+   
 }

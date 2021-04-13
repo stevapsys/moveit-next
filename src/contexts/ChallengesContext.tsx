@@ -2,6 +2,7 @@ import { createContext, useState, useEffect, ReactNode } from 'react';
 import Cookies from 'js-cookie'
 import challenges from '../../challenges.json'; 
 import { LevelUpModal } from '../components/LevelUpModal';
+import { LoginModal } from '../components/LoginModal';
 
 interface Challenge {
     type: 'body' | 'eye'; 
@@ -18,7 +19,10 @@ interface ChallengesContextData {level: number;
     resetChallenge: ()=> void;
     experienceToNextLevel: number;
     completeChallenge: ()=> void;
-    closeLevelUpModal: ()=> void }
+    closeLevelUpModal: ()=> void;
+    loginModal:  ()=> void;
+    closeLoginModal: () => void
+  }
 
 interface ChallengesProviderProps {
     children: ReactNode; 
@@ -39,6 +43,8 @@ export function ChallengesProvider({children, ...rest}: ChallengesProviderProps)
 
   const [activeChallenge, setActiveChallenge] = useState(null)
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
+  const [isLoginModalOpen, setLoginModalOpen] = useState(true)
+
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
@@ -53,6 +59,14 @@ export function ChallengesProvider({children, ...rest}: ChallengesProviderProps)
 
 }, [level, currentExperience, challengesCompleted]); 
 
+  function loginModal() {
+    setLoginModalOpen(true)
+  }
+
+  function closeLoginModal() {
+    setLoginModalOpen(false)
+
+  }
 
   function levelUp() {
     setLevel(level + 1);
@@ -102,11 +116,15 @@ export function ChallengesProvider({children, ...rest}: ChallengesProviderProps)
   }
 
     return ( 
-        <ChallengesContext.Provider value={{level, currentExperience, challengesCompleted, levelUp, startNewChallenge, activeChallenge, resetChallenge, experienceToNextLevel, completeChallenge, closeLevelUpModal}}>     
+        <ChallengesContext.Provider value={{level, currentExperience, challengesCompleted, levelUp, startNewChallenge, activeChallenge, resetChallenge, experienceToNextLevel, completeChallenge, closeLevelUpModal, loginModal, closeLoginModal }}>     
             {children}
-           {isLevelUpModalOpen && <LevelUpModal/>} 
-
+            <div>
+              {isLevelUpModalOpen && <LevelUpModal/>}
+            </div>
+            <div>
+              {isLoginModalOpen &&  <LoginModal/>}  
+            </div>
         </ChallengesContext.Provider>
-
+        
     )
 }
