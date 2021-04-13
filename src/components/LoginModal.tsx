@@ -4,16 +4,21 @@ import style from '../style/components/LoginModal.module.css';
 
 export function LoginModal () {
  
-const {closeLoginModal, level , closeLevelUpModal} = useContext(ChallengesContext); 
+const {closeLoginModal, level} = useContext(ChallengesContext); 
 
 
   function handleSubmit() {
         let userInput = document.getElementsByTagName('input');
         const username = userInput[0].value; 
         const github = userInput[1].value; 
+        const githubImage = 'https://github.com/' + github + '.png'; 
 
         localStorage.setItem('username', username);
-        localStorage.setItem('github', github);
+        localStorage.setItem('github', githubImage);
+
+        if ( github == "") {
+            localStorage.setItem('github', 'icons/gatinho.png');
+        }
 
         closeLoginModal(); 
       }
@@ -42,11 +47,11 @@ const {closeLoginModal, level , closeLevelUpModal} = useContext(ChallengesContex
                         <form>
                             <div>
                                 <label htmlFor="nome">Qual o seu nome?</label>
-                                <input className="username" type="text" name="username" placeholder="Teka" required />
+                                <input className="username" type="text" name="username" placeholder="Teka"  />
                             </div>
                             <div>
                                 <label htmlFor="nome">Qual o seu GitHub?</label>
-                                <input type="text" name="github" id="" placeholder="https://github.com/stevapsys"/>
+                                <input type="text" name="github" id="" placeholder="stevapsys"/>
                             </div>
                             <div>
                             <button type="submit" className={style.submitButton} onClick={handleSubmit }>Entrar</button>

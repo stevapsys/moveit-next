@@ -19,8 +19,9 @@ interface HomeProps {
 }
 
 
-
 export default function Home(props: HomeProps) {
+
+
   return (
     <ChallengesProvider level={props.level}
     currentExperience={props.currentExperience} 
